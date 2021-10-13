@@ -167,6 +167,7 @@ function start_vm {
     ${image_family_flag} \
     --labels=gh_ready=0 \
     --metadata=startup-script="$startup_script" \
+    --preemptible \
     && echo "::set-output name=label::${VM_ID}"
 
   safety_off
